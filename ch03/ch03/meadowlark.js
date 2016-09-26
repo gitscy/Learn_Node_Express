@@ -1,4 +1,6 @@
 ﻿var express = require('express');
+var fortune = require('./lib/fortune.js');
+
 
 var app = express();
 
@@ -12,13 +14,13 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-var fortunes = [
-    "Conquer your fears or they will conquer you.",
-    "Rivers need springs.",
-    "Do not fear what you don't know.",
-    "You will have a pleasant surprise.",
-    "Whenever possible, keep it simple."
-];
+//var fortunes = [
+//    "Conquer your fears or they will conquer you.",
+//    "Rivers need springs.",
+//    "Do not fear what you don't know.",
+//    "You will have a pleasant surprise.",
+//    "Whenever possible, keep it simple."
+//];
 
 //路由
 app.get('/', function (req, res) {
@@ -26,8 +28,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/about', function (req, res) {
-    var randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-    res.render('about', { fortune: randomFortune });
+    //var randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+    res.render('about', { fortune: fortune.getFortune() });
 });
 
 //视图引擎取到了页面 会默认返回200 所以404和500要单独设置状态码
