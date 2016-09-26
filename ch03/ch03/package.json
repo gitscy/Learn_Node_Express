@@ -1,0 +1,14 @@
+{
+  "name": "ch03",
+  "version": "0.0.0",
+  "description": "ch03",
+  "main": "app.js",
+  "author": {
+    "name": "S.cy_Office"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "express3-handlebars": "^0.5.2"
+  }
+}

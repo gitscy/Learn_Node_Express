@@ -1,0 +1,2 @@
+C:\Users\S.cy_Office\Dropbox\project_node\Node与Express开发\ch03\ch03\obj\Debug\ch03.njsprojResolveAssemblyReference.cache
+C:\Users\S.cy_Office\Dropbox\project_node\Node与Express开发\ch03\ch03\bin\Microsoft.NodejsTools.WebRole.dll
