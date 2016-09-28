@@ -5,6 +5,9 @@ var fortune = require('./lib/fortune.js');
 var app = express();
 
 var handlebars = require('express3-handlebars').create({ defaultLayout: 'main' });
+console.log(123);
+
+
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
@@ -24,7 +27,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.use(function (req, res, next) {
-    res.locals.showTeste = app.get('env') !== 'production' && req.query.text === '1';
+    res.locals.showTests = app.get('env') !== 'production' && req.query.text === '1';
     next();
 });
 
