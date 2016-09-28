@@ -22,6 +22,14 @@ app.use(express.static(__dirname + '/public'));
 //    "Whenever possible, keep it simple."
 //];
 
+
+app.use(function (req, res, next) {
+    res.locals.showTeste = app.get('env') !== 'production' && req.query.text === '1';
+    next();
+});
+
+
+
 //路由
 app.get('/', function (req, res) {
     res.render('home');
