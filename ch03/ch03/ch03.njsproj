@@ -40,6 +40,8 @@
     <Content Include="views\layouts\main.handlebars" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="views\tours\hood-river.handlebars" />
+    <Content Include="views\tours\request-group-rate.handlebars" />
     <TypeScriptCompile Include="Scripts\typings\node\node.d.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -52,10 +54,12 @@
     <Folder Include="Scripts\typings\" />
     <Folder Include="Scripts\typings\node\" />
     <Folder Include="views\layouts\" />
+    <Folder Include="views\tours\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lib\fortune.js" />
     <Compile Include="meadowlark.js" />
+    <Compile Include="public\qa\tests-about.js" />
     <Compile Include="public\qa\tests-global.js" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

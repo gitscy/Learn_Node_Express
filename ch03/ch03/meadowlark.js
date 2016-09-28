@@ -5,7 +5,6 @@ var fortune = require('./lib/fortune.js');
 var app = express();
 
 var handlebars = require('express3-handlebars').create({ defaultLayout: 'main' });
-console.log(123);
 
 
 app.engine('handlebars', handlebars.engine);
@@ -27,7 +26,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.use(function (req, res, next) {
-    res.locals.showTests = app.get('env') !== 'production' && req.query.text === '1';
+    res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
     next();
 });
 
@@ -40,7 +39,18 @@ app.get('/', function (req, res) {
 
 app.get('/about', function (req, res) {
     //var randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-    res.render('about', { fortune: fortune.getFortune() });
+    res.render('about', {
+        fortune: fortune.getFortune(),
+        pageTestScript:'/qa/tests-about.js'
+    });
+});
+
+app.get('/tours/hood-river', function (req, res) {
+    res.render('tours/hood-river');
+});
+
+app.get('/tours/request-group-rate', function (req, res) {
+    res.render('tours/request-group-rate');
 });
 
 //视图引擎取到了页面 会默认返回200 所以404和500要单独设置状态码
